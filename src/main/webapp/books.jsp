@@ -16,7 +16,7 @@
 					out.println("Titulo: " + book.getTitle());
 				}
 			} else {
-				out.println("fudeu");
+				out.println("fudeu o");
 			}
 
 		%>
