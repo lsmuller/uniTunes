@@ -31,7 +31,7 @@ public class HelloServlet extends HttpServlet {
     	
     	String page = null;
     	
-    	if (books == null) {
+    	if (books != null) {
     		page ="books.jsp";
     	} else {
     		page = "index.jsp";
