@@ -16,7 +16,7 @@
 					out.println("Titulo: " + book.getTitle());
 				}
 			} else {
-				out.println("lista vazia");
+				out.println("fudeu");
 			}
 
 		%>
