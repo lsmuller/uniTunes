@@ -1,5 +1,5 @@
-<%@ page import="java.util" %>
-<%@ page import="br.unisinos.unitunes.model" %>
+<%@ page import="java.util.*" %>
+<%@ page import="br.unisinos.unitunes.model.*" %>
 <html>
 	<body>
 		<% 	
