@@ -19,6 +19,13 @@ import br.unisinos.unitunes.model.Book;
     )
 public class HelloServlet extends HttpServlet {
 
+	@Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+		
+		doPost(req, resp);
+	}
+	
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
@@ -32,7 +39,7 @@ public class HelloServlet extends HttpServlet {
     	String page = null;
     	
     	if (books != null) {
-    		page ="books.jsp";
+    		page = "books.jsp";
     	} else {
     		page = "index.jsp";
     	}
