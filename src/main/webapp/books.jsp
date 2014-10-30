@@ -19,7 +19,6 @@
 				out.println("lista vazia");
 			}
 
-		}
 		%>
 	</body>
 </html>	
