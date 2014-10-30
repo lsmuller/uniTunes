@@ -13,6 +13,8 @@ public class BookController {
 		Book book = new Book();
 		book.setTitle("50 tons de cinza");
 		
+		books.add(book);
+		
 		return books;
 	}
 	
