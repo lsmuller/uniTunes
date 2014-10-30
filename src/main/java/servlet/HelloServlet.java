@@ -36,7 +36,7 @@ public class HelloServlet extends HttpServlet {
     	
     	req.setAttribute("books", books);
     	
-    	RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
+    	RequestDispatcher dispatcher = req.getRequestDispatcher("books.jsp");
     	dispatcher.forward(req, resp);
     }
     
