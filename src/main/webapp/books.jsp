@@ -5,7 +5,7 @@
 	<body>
 		<ul>
 		<c:forEach var="book" items="${requestScope.books}">
-		    <li> ${book.titulo}
+		    <li> ${book.title}
 		</c:forEach>
 		<ul>
 
