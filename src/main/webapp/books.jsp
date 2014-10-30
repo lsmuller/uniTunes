@@ -3,7 +3,7 @@
 <html>
 	<body>
 		<% 	
-			List<Book> books;
+			List<Book> books = null;
 
 			if (request != null) {
 				books = (List<Book>) request.getAttribute("books");
