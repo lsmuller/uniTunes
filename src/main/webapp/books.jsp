@@ -6,7 +6,7 @@
 			List<Book> books = null;
 
 			if (request != null) {
-				books = (List<Book>) request.getAttribute("books");
+				books = (List<Book>) request.getAttribute("book");
 			} else {
 				out.println("request vazia");
 			}
