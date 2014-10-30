@@ -3,7 +3,7 @@
 <html>
 	<body>
 		<% 	
-			List<Book> books = (List<Book>) request.getAttribute("books");
+			List<Book> books = (List<Book>) req.getAttribute("books");
 
 			for(Book book : books) {
 				out.println("Titulo: " + book.getTitle());
