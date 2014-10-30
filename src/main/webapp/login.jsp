@@ -13,7 +13,7 @@
 <body>
   <section class="container">
     <div class="login">
-      <h1>UniTunes - Login ajhsdgasjhdgajshgdhjas</h1>
+      <h1>Bem vindo ao UniTunes</h1>
       <form method="post" action="index.html">
         <p><input type="text" name="login" value="" placeholder="Username or Email"></p>
         <p><input type="password" name="password" value="" placeholder="Password"></p>
@@ -32,4 +32,4 @@
     </div>
   </section>
 </body>
-</html>cs
+</html>
