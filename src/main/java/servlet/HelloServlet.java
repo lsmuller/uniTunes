@@ -22,6 +22,7 @@ public class HelloServlet extends HttpServlet {
             throws ServletException, IOException {
     	
     	BookController controller = new BookController();
+    	//s
     	
     	req.setAttribute("books", controller.getBookList());
     	
