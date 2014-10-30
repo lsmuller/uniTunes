@@ -3,10 +3,20 @@
 <html>
 	<body>
 		<% 	
-			List<Book> books = (List<Book>) request.getAttribute("books");
+			List<Book> books = null;
 
-			for(Book book : books) {
-				out.println("Titulo: " + book.getTitle());
+			if (request != null) {
+				books = (List<Book>) request.getAttribute("books");
+			} else {
+				out.println("request vazia");
+			}
+
+			if (books != null) {
+				for(Book book : books) {
+					out.println("Titulo: " + book.getTitle());
+				}
+			} else {
+				out.println("lista vazia");
 			}
 
 		%>
