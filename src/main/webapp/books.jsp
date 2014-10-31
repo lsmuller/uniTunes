@@ -10,17 +10,15 @@
 		<ul>
 
 		<% 	
-			List<Book> books = null;
+			//List<Book> books = null;
 
-			books = (List<Book>) request.getAttribute("books");
+			//books = (List<Book>) request.getAttribute("books");
 
-			if (books != null) {
-			for(Book book : books) {
-				out.println("Titulo: " + book.getTitle());
-				}
-			}
-
-
+			//if (books != null) {
+			//for(Book book : books) {
+			//	out.println("Titulo: " + book.getTitle());
+			//	}
+			//}
 		%>
 	</body>
 </html>	
