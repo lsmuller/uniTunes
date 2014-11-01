@@ -1,28 +1,54 @@
 package br.unisinos.unitunes.model;
 
-import lombok.Getter;
-import lombok.Setter;
-
 public class Academic {
 
-	@Getter
-	@Setter
 	private String email;
 	
-	@Getter
-	@Setter
 	private String password;
 	
-	@Getter
-	@Setter
 	private String firstName;
 	
-	@Getter
-	@Setter
 	private String lastName;
 	
-	@Getter
-	@Setter
 	private double balance;
-	
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
 }

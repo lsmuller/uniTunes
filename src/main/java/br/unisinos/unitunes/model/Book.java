@@ -1,12 +1,14 @@
 package br.unisinos.unitunes.model;
 
-import lombok.Getter;
-import lombok.Setter;
-
 public class Book {
 	
-	@Getter
-	@Setter
 	private String title;
 
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
 }
