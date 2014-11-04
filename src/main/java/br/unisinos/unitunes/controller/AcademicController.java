@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,11 +52,12 @@ public class AcademicController implements IController<Academic> {
 
 	public List<Academic> getAll() {
 		ArrayList<Academic> academics = new ArrayList<Academic>();
-		ResultSet rs = null;
 		
 		try {
-			PreparedStatement ps = conn.prepareStatement("SELECT * FROM ACADEMIC;");
-			rs = ps.executeQuery();
+			Connection conn = db.getConn();
+			Statement stmt = conn.createStatement();
+			
+			ResultSet rs = stmt.executeQuery("SELECT * FROM ACADEMIC;");
 			
 			while(rs.next()) {
 				Academic a = getFromResultSet(rs); 
