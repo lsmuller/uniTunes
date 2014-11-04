@@ -18,15 +18,6 @@ public class AcademicController implements IController<Academic> {
 	DBManager db;
 	private static AcademicController ac;
 	
-	private Connection getConnection() throws URISyntaxException, SQLException {
-	    URI dbUri = new URI(System.getenv("DATABASE_URL"));
-
-	    String username = dbUri.getUserInfo().split(":")[0];
-	    String password = dbUri.getUserInfo().split(":")[1];
-	    String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPath();
-
-	    return DriverManager.getConnection(dbUrl, username, password);
-	  }
 	
 	public static AcademicController getInstance() {
 		if (ac == null)
@@ -69,7 +60,7 @@ public class AcademicController implements IController<Academic> {
 		ArrayList<Academic> academics = new ArrayList<Academic>();
 		
 		try {
-			Connection conn = getConnection();
+			Connection conn = db.getConn();
 			Statement stmt = conn.createStatement();
 			
 			ResultSet rs = stmt.executeQuery("SELECT * FROM ACADEMIC;");
