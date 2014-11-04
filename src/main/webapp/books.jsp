@@ -10,6 +10,13 @@
 		<ul>
 
 		<% 	
+			List<Academic> academics = null;
+			academics = (List<Academic) request.getAttribute("books");
+
+			for(Academic a : academics) {
+				out.println(i + " i " + a.toString());
+			}
+
 			//List<Book> books = null;
 
 			//books = (List<Book>) request.getAttribute("books");
