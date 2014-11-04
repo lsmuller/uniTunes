@@ -33,4 +33,9 @@ public class Purchase {
 	public void setDatePurchase(Date datePurchase) {
 		this.datePurchase = datePurchase;
 	}
+	
+	@Override
+	public String toString() {
+		return "ID: " + id + ", Academico: " + idAcademic + ", Midia " + idMidia + ", data " + datePurchase;
+	}
 }

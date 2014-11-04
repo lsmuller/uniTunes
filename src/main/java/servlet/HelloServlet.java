@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.unisinos.unitunes.controller.AcademicController;
 import br.unisinos.unitunes.controller.BookController;
+import br.unisinos.unitunes.model.Academic;
 import br.unisinos.unitunes.model.Book;
 
 @WebServlet(
@@ -30,11 +32,13 @@ public class HelloServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
     	
-    	BookController controller = new BookController();
-    	
-    	List<Book> books = controller.getBookList();
-    	
+    	AcademicController ac = AcademicController.getInstance();
+    	List<Academic> books = ac.getAll();
     	req.setAttribute("books", books);
+    	
+//    	BookController controller = new BookController();
+//    	List<Book> books = controller.getBookList();
+//    	req.setAttribute("books", books);
     	
     	RequestDispatcher dispatcher = req.getRequestDispatcher("books.jsp");
     	dispatcher.forward(req, resp);

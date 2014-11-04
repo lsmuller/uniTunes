@@ -10,6 +10,18 @@ public class Academic {
 	private double balance;
 	private boolean admin;
 	private boolean excluded;
+	
+	public Academic(long id, String email, String firstName, String lastName,
+			String password, double balance, boolean admin, boolean excluded) {
+		this.id = id;
+		this.email = email;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.password = password;
+		this.balance = balance;
+		this.admin = admin;
+		this.excluded = excluded;
+	}
 
 	public long getId() {
 		return id;
@@ -73,5 +85,10 @@ public class Academic {
 
 	public void setBalance(double balance) {
 		this.balance = balance;
+	}
+
+	@Override
+	public String toString() {
+		return "ID: " + id + ", login " + email + ", senha " + password + ", saldo " + balance + ", admin " + admin + ", excluido " + excluded;
 	}
 }

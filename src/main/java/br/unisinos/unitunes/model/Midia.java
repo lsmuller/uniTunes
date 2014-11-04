@@ -1,6 +1,5 @@
 package br.unisinos.unitunes.model;
 
-import java.awt.Image;
 import java.util.Date;
 
 public class Midia {
@@ -95,5 +94,10 @@ public class Midia {
 
 	public void setPagesCount(int pagesCount) {
 		this.pagesCount = pagesCount;
+	}
+	
+	@Override
+	public String toString() {
+		return "ID: " + id + ", nome " + name + ", preço " + price + " excluded " + excluded; 
 	}
 }
