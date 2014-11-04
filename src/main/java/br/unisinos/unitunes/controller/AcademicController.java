@@ -1,14 +1,9 @@
 package br.unisinos.unitunes.controller;
 
-import java.io.ObjectInputStream.GetField;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,6 +65,9 @@ public class AcademicController implements IController<Academic> {
 		catch (Exception e) {
 //			TODO: fix
 		}
+		
+		Academic a = new Academic(1, "me@paulograbin.com", "Paulo", "Grabin", "teste", 99.9, true, false);
+		academics.add(a);
 		
 		return academics;
 	}
