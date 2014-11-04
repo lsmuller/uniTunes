@@ -5,7 +5,14 @@
 	<body>
 		<ul>
 		<c:forEach var="book" items="${requestScope.books}">
-		    <li> ${book.title}
+		    <li> ${book.id}
+		    <li> ${book.email}
+		    <li> ${book.firstName}
+		    <li> ${book.lastName}
+		    <li> ${book.password}
+		    <li> ${book.balance}
+		    <li> ${book.admin}
+		    <li> ${book.excluded}
 		</c:forEach>
 		<ul>
 
