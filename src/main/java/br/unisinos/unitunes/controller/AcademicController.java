@@ -74,7 +74,7 @@ public class AcademicController implements IController<Academic> {
 			}
 		}
 		catch (Exception e) {
-			academics.add(new Academic(5, "teste", "teste", "teste", "teste", 3, false, false));
+			academics.add(new Academic(5, e.getMessage(), "teste", "teste", "teste", 3, false, false));
 		}
 		
 		return academics;
