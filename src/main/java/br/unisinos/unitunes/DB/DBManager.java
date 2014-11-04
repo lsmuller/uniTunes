@@ -5,13 +5,11 @@ import java.net.URISyntaxException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class DBManager {
 
 	private static DBManager db;
 	private Connection conn;
-	private Statement stmt;
 		
 	public static DBManager getInstance() throws URISyntaxException, SQLException {
 		if (db == null) {
@@ -22,7 +20,7 @@ public class DBManager {
 	}
 	
 	public Connection getConn() {
-        return conn;
+        return this.conn;
     }
 	
 	public DBManager() throws URISyntaxException, SQLException {
@@ -32,6 +30,6 @@ public class DBManager {
 	    String password = dbUri.getUserInfo().split(":")[1];
 	    String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + dbUri.getPath();
 
-	    conn = DriverManager.getConnection(dbUrl, username, password);
+	    this.conn = DriverManager.getConnection(dbUrl, username, password);
 	}	
 }
