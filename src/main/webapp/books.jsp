@@ -3,6 +3,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 	<body>
+
+	Listando academicos...
+
 		<ul>
 		<c:forEach var="book" items="${requestScope.books}">
 		    <li> ${book.id}
@@ -16,7 +19,7 @@
 		</c:forEach>
 		<ul>
 
-		<% 	
+		<%
 			List<Academic> academics = null;
 			academics = (List<Academic>) request.getAttribute("books");
 
