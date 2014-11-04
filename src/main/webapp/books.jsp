@@ -26,6 +26,7 @@
 
 			for(Academic a : academics) {
 				out.println(a.toString());
+				out.println();
 			}
 
 			//List<Book> books = null;
