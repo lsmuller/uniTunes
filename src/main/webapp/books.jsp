@@ -14,7 +14,7 @@
 			academics = (List<Academic>) request.getAttribute("books");
 
 			for(Academic a : academics) {
-				out.println(i + " i " + a.toString());
+				out.println(a.toString());
 			}
 
 			//List<Book> books = null;
