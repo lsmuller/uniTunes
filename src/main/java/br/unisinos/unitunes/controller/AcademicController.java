@@ -58,6 +58,12 @@ public class AcademicController implements IController<Academic> {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public Academic login(String login, String password) {
+		Academic a = null;
+		
+		return a;
+	}
 
 	public List<Academic> getAll() {
 		ArrayList<Academic> academics = new ArrayList<Academic>();

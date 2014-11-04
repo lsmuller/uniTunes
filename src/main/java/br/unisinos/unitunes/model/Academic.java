@@ -89,6 +89,6 @@ public class Academic {
 
 	@Override
 	public String toString() {
-		return "ID: " + id + ", login " + email + ", senha " + password + ", saldo " + balance + ", admin " + admin + ", excluido " + excluded;
+		return "ID: " + id + " / login " + email + " / senha " + password + " / saldo " + balance + " / admin " + admin + " / excluido " + excluded + "\n";
 	}
 }
