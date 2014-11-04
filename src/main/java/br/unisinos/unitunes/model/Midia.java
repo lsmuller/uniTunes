@@ -6,24 +6,16 @@ import java.util.Date;
 public class Midia {
 
 	private long id;
-	
-	private double cost;
-	
-	private int type; // 1- Music, 2- Book, 3-Video, 4- Podcast
-	
 	private String name;
-	
 	private String description;
-	
-	private Image image;
-	
-	private Date creation;
-	
-	private String cateogry;
-	
+	private double price;
+	private long author;
+	private int category; // 1- Music, 2- Book, 3- Video, 4- Podcast
+//	private Image image;
 	private int duration;
-	
 	private int pagesCount;
+	private Date creation;
+	private boolean excluded;
 
 	public long getId() {
 		return id;
@@ -31,22 +23,6 @@ public class Midia {
 
 	public void setId(long id) {
 		this.id = id;
-	}
-
-	public double getCost() {
-		return cost;
-	}
-
-	public void setCost(double cost) {
-		this.cost = cost;
-	}
-
-	public int getType() {
-		return type;
-	}
-
-	public void setType(int type) {
-		this.type = type;
 	}
 
 	public String getName() {
@@ -65,14 +41,6 @@ public class Midia {
 		this.description = description;
 	}
 
-	public Image getImage() {
-		return image;
-	}
-
-	public void setImage(Image image) {
-		this.image = image;
-	}
-
 	public Date getCreation() {
 		return creation;
 	}
@@ -81,12 +49,36 @@ public class Midia {
 		this.creation = creation;
 	}
 
-	public String getCateogry() {
-		return cateogry;
+	public double getPrice() {
+		return price;
 	}
 
-	public void setCateogry(String cateogry) {
-		this.cateogry = cateogry;
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public long getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(long author) {
+		this.author = author;
+	}
+
+	public int getCategory() {
+		return category;
+	}
+
+	public void setCategory(int category) {
+		this.category = category;
+	}
+
+	public boolean isExcluded() {
+		return excluded;
+	}
+
+	public void setExcluded(boolean excluded) {
+		this.excluded = excluded;
 	}
 
 	public int getDuration() {
@@ -104,9 +96,4 @@ public class Midia {
 	public void setPagesCount(int pagesCount) {
 		this.pagesCount = pagesCount;
 	}
-	
-//	Mídia pode ser free ou paga ( valor > R$ 0,01).
-//	Tipos: musica, livro, vídeo ou podcast.
-//	Informações: nome, descrição, imagem, preço, nome do(s) autor(es), conteúdo (sendo a própria mídia), data de criação e categoria, 
-//	duração em minutos (musica, video e podcast), paginas (livro). 	
 }

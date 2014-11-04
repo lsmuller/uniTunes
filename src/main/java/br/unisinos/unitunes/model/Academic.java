@@ -2,15 +2,38 @@ package br.unisinos.unitunes.model;
 
 public class Academic {
 
+	private long id;
 	private String email;
-	
-	private String password;
-	
 	private String firstName;
-	
 	private String lastName;
-	
+	private String password;
 	private double balance;
+	private boolean admin;
+	private boolean excluded;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public boolean isAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
+	}
+
+	public boolean isExcluded() {
+		return excluded;
+	}
+
+	public void setExcluded(boolean excluded) {
+		this.excluded = excluded;
+	}
 
 	public String getEmail() {
 		return email;
