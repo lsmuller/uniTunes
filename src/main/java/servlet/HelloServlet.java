@@ -43,6 +43,7 @@ public class HelloServlet extends HttpServlet {
     	catch (Exception e) {
     		books = new Academic(0, e.getMessage(), "", "", "", 0, false, true); 
     	}
+    	req.setAttribute("books", books);
     	
     	RequestDispatcher dispatcher = req.getRequestDispatcher("books.jsp");
     	dispatcher.forward(req, resp);
