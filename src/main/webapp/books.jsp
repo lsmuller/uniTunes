@@ -21,13 +21,18 @@
 		<ul>
 
 		<%
-			List<Academic> academics = null;
-			academics = (List<Academic>) request.getAttribute("books");
+			Academic a = null;
+			a = request.getAttribute("books);
+			
+			out.println(a);
+		
+			//List<Academic> academics = null;
+			//academics = (List<Academic>) request.getAttribute("books");
 
-			for(Academic a : academics) {
-				out.println(a.toString());
-				out.println();
-			}
+			//for(Academic a : academics) {
+			//	out.println(a.toString());
+			//	out.println();
+			//}
 
 			//List<Book> books = null;
 

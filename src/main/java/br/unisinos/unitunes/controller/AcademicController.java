@@ -1,9 +1,7 @@
 package br.unisinos.unitunes.controller;
 
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.sql.Connection;
-import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -77,9 +75,24 @@ public class AcademicController implements IController<Academic> {
 		return academics;
 	}
 
-	public Academic getById(long id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Academic getById(long id) throws SQLException {
+		ResultSet rs ;
+		Academic a = null;
+		
+		Connection conn = db.getConn();
+		PreparedStatement ps = conn.prepareStatement("SELECT * FROM ACADEMIC WHERE ID = ?");
+		ps.setLong(1, id);
+
+		rs = ps.executeQuery();
+		
+		if(rs.next()) {
+			a = getFromResultSet(rs);
+		}
+		else {
+			throw new SQLException("Academic not found!");
+		}
+
+		return a;
 	}
 
     public Academic getFromResultSet(ResultSet rs) {

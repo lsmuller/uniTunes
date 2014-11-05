@@ -30,9 +30,19 @@ public class HelloServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
     	
+//    	AcademicController ac = AcademicController.getInstance();
+//    	List<Academic> books = ac.getAll();
+//    	req.setAttribute("books", books);
+    	
+    	Academic books;
+    	
     	AcademicController ac = AcademicController.getInstance();
-    	List<Academic> books = ac.getAll();
-    	req.setAttribute("books", books);
+    	try {
+    		books = ac.getById(1);
+    	}
+    	catch (Exception e) {
+    		books = new Academic(0, e.getMessage(), "", "", "", 0, false, true); 
+    	}
     	
     	RequestDispatcher dispatcher = req.getRequestDispatcher("books.jsp");
     	dispatcher.forward(req, resp);

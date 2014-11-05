@@ -1,5 +1,6 @@
 package br.unisinos.unitunes.controller;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface IController<T> {
@@ -12,6 +13,6 @@ public interface IController<T> {
 	
 	List<T> getAll ();
 	
-	T getById(long id);
+	T getById(long id) throws SQLException;
 	
 }
