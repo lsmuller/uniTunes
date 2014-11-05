@@ -6,19 +6,7 @@
 
 	Listando academicos...
 
-		<ul>
-		<c:forEach var="book" items="${requestScope.books}">
-		    <li> Id: ${book.id}
-		    <li> Email: ${book.email}
-		    <li> Nome: ${book.firstName}
-		    <li> Sobrenome: ${book.lastName}
-		    <li> Senha: ${book.password}
-		    <li> Saldo: ${book.balance}
-		    <li> Admin: ${book.admin}
-		    <li> Excluido: ${book.excluded}
-		    <br>
-		</c:forEach>
-		<ul>
+		
 
 		<%
 			Academic a = null;
