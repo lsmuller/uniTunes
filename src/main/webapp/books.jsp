@@ -22,7 +22,7 @@
 
 		<%
 			Academic a = null;
-			a = request.getAttribute("books);
+			a = request.getAttribute("books");
 			
 			out.println(a);
 		
