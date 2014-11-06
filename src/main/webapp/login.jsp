@@ -12,7 +12,8 @@
 		${message.message} <br />
 	</c:forEach>
 	
-	${request.getRequestedURL}
+	${request.requestedURI}
+	${requestScope['javax.servlet.forward.request_uri']}
 
 	<form action="/login" method="post">
 		Email: <input type="text" name="email" /> <br />
