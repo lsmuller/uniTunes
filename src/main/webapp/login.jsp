@@ -8,6 +8,10 @@
 <title>Unitunes</title>
 </head>
 <body>
+	<c:forEach var="message" items="${messages}">
+		${message.message} <br />
+	</c:forEach>
+
 	<form action="/login" method="post">
 		Email: <input type="text" name="email" /> <br />
 		Senha: <input type="password" name="password" /> <br />
