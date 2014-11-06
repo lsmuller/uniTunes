@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebFilter(filterName = "LoginFilter",
-	urlPatterns = {"/*"})
+	urlPatterns = {"/secured/*"})
 public class LoginFilter implements Filter {
 	
 	public void destroy() {
