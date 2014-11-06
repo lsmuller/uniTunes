@@ -41,7 +41,7 @@ public class LoginController extends HttpServlet {
     	} else {
     		List<ViewMessage> viewMessages = new ArrayList<ViewMessage>();
     		viewMessages.add(new ViewMessage(ViewMessage.ERROR, "Email ou senha inválidos"));
-    		dispatcher = request.getRequestDispatcher("login.jsp");
+    		dispatcher = request.getRequestDispatcher("secured/login.jsp");
     		request.setAttribute("messages", viewMessages);
     	}
     	

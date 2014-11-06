@@ -1,4 +1,4 @@
-package br.unisinos.unitunes.service;
+package br.unisinos.unitunes.filter;
 
 import java.io.IOException;
 
