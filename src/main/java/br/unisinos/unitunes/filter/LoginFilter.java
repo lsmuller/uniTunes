@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebFilter(filterName = "LoginFilter",
-	urlPatterns = {"/s/*"})
+	urlPatterns = {"/*"})
 public class LoginFilter implements Filter {
 	
 	public void destroy() {
@@ -24,8 +24,7 @@ public class LoginFilter implements Filter {
 			FilterChain chain) throws IOException, ServletException {
 		
 		if (((HttpServletRequest) request).getSession().getAttribute("academic") != null
-//				|| ((HttpServletRequest) request).getRequestURL().toString() == "/login.jsp") {
-				){
+				|| ((HttpServletRequest) request).getRequestURI().toString() == "/login") {
 			// User is logged in, just continue request.
 		    chain.doFilter(request, response); 
 		} else {
