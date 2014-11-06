@@ -37,7 +37,7 @@ public class LoginController extends HttpServlet {
     	
     	if (academic != null) {
     		request.getSession().setAttribute("academic", academic);
-    		dispatcher = request.getRequestDispatcher("secured/index.jsp");
+    		dispatcher = request.getRequestDispatcher("index.jsp");
     	} else {
     		List<ViewMessage> viewMessages = new ArrayList<ViewMessage>();
     		viewMessages.add(new ViewMessage(ViewMessage.ERROR, "Email ou senha inválidos"));

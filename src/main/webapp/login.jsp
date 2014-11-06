@@ -11,6 +11,8 @@
 	<c:forEach var="message" items="${messages}">
 		${message.message} <br />
 	</c:forEach>
+	
+	${request.getRequestedURL}
 
 	<form action="/login" method="post">
 		Email: <input type="text" name="email" /> <br />
