@@ -21,7 +21,7 @@
       
       <c:forEach var="message" items="${messages}">
 			${message.message} <br />
-		</c:forEach>
+	  </c:forEach>
       
       ${academic.email}
       

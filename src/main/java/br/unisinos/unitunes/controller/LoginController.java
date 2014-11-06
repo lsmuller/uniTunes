@@ -27,13 +27,13 @@ public class LoginController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     	
-    	LoginService loginDAO = new LoginService();
+    	LoginService loginService = new LoginService();
     	RequestDispatcher dispatcher = null;
     	
     	String email = request.getParameter("email");
     	String password = request.getParameter("password");
     	
-    	Academic academic = loginDAO.login(email, password);
+    	Academic academic = loginService.login(email, password);
     	
     	if (academic != null) {
     		request.getSession().setAttribute("academic", academic);
@@ -41,7 +41,8 @@ public class LoginController extends HttpServlet {
     	} else {
     		List<ViewMessage> viewMessages = new ArrayList<ViewMessage>();
     		viewMessages.add(new ViewMessage(ViewMessage.ERROR, "Email ou senha inválidos"));
-    		viewMessages.add(new ViewMessage(ViewMessage.ERROR, request.getRequestURI().toString()));
+    		viewMessages.add(new ViewMessage(ViewMessage.ERROR, email));
+    		viewMessages.add(new ViewMessage(ViewMessage.ERROR, password));
     		dispatcher = request.getRequestDispatcher("login.jsp");
     		request.setAttribute("messages", viewMessages);
     	}
