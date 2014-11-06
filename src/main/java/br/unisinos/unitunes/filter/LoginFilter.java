@@ -23,7 +23,8 @@ public class LoginFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain chain) throws IOException, ServletException {
 		
-		if (((HttpServletRequest) request).getSession().getAttribute("academic") != null) {
+		if (((HttpServletRequest) request).getSession().getAttribute("academic") != null
+				|| ((HttpServletRequest) request).getRequestURL().toString() == "/login.jsp") {
 			// User is logged in, just continue request.
 		    chain.doFilter(request, response); 
 		} else {
