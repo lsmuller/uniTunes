@@ -19,7 +19,11 @@
       <h1>Bem vindo ao UniTunes</h1>
       
       
-      ${requestScope['academic.email']}
+      <c:forEach var="message" items="${messages}">
+			${message.message} <br />
+	  </c:forEach>
+      
+      ${academic.email}
       
       
       <form method="post" action="index.html">
