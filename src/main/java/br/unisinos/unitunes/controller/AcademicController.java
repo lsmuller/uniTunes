@@ -14,6 +14,7 @@ import br.unisinos.unitunes.model.Academic;
 public class AcademicController implements IController<Academic> {
 	
 	DBManager db;
+	Connection conn;
 	private static AcademicController ac;
 	
 	
@@ -27,6 +28,7 @@ public class AcademicController implements IController<Academic> {
 	public AcademicController() {
 		try {
 			db = DBManager.getInstance();
+			conn = db.getConn();
 		}
 		catch (Exception e) {
 //			TODO: fix
@@ -38,14 +40,58 @@ public class AcademicController implements IController<Academic> {
 		
 	}
 
-	public void update(Academic entitiy) {
-		// TODO Auto-generated method stub
+	public long update(Academic entity) throws SQLException {
+		ResultSet generatedKeys = null;
+		long affectedRows;
 		
+		PreparedStatement ps = conn.prepareStatement("UPDATE ACADEMIC "
+				+ " SET firstname = ?, " 
+				+ " SET lastname = ?, "
+				+ " SET email = ?, "
+				+ " SET password = ?, "
+				+ " SET balance = ?, "
+				+ " SET admin = ?, "
+				+ " SET excluded = ?"
+				+ " WHERE id = ?", Statement.RETURN_GENERATED_KEYS);
+		
+		ps.setString(1, entity.getFirstName());
+		ps.setString(2, entity.getLastName());
+		ps.setString(3, entity.getEmail());
+		ps.setString(4, entity.getPassword());
+		ps.setDouble(5, entity.getBalance());
+		ps.setBoolean(6, entity.isAdmin());
+		ps.setBoolean(7, entity.isExcluded());
+		
+
+        affectedRows = ps.executeUpdate();
+        if (affectedRows == 0) {
+            throw new SQLException("Update user failed, no rows affected.");
+        } else if (affectedRows > 1) {
+            throw new SQLException("More than one row updated");
+        }
+
+        return affectedRows;
 	}
 
-	public void delete(Academic entity) {
-		// TODO Auto-generated method stub
+	public int delete(long l) throws SQLException {
+		int resultDelete;
 		
+		PreparedStatement ps = conn.prepareStatement("UPDATE ACADEMIC"
+				+ " SET excluded = true"
+				+ " WEHRE ID = ?");
+		ps.setLong(1, l);
+		
+		resultDelete = ps.executeUpdate();
+		
+		 if (resultDelete == 0) {
+	            throw new SQLException("No record found for deletion!");
+	        } else if (resultDelete > 1) {
+	            throw new SQLException("More than one row deleted!");
+	        } else {
+	            System.out.println("Usuario código " + l + " deletado!");
+	        }
+
+	        return resultDelete;
 	}
 	
 	public Academic login(String login, String password) {
@@ -58,7 +104,6 @@ public class AcademicController implements IController<Academic> {
 		ArrayList<Academic> academics = new ArrayList<Academic>();
 		
 		try {
-			Connection conn = db.getConn();
 			Statement stmt = conn.createStatement();
 			
 			ResultSet rs = stmt.executeQuery("SELECT * FROM ACADEMIC;");
@@ -79,7 +124,6 @@ public class AcademicController implements IController<Academic> {
 		ResultSet rs ;
 		Academic a = null;
 		
-		Connection conn = db.getConn();
 		PreparedStatement ps = conn.prepareStatement("SELECT * FROM ACADEMIC WHERE ID = ?");
 		ps.setLong(1, id);
 
@@ -116,5 +160,4 @@ public class AcademicController implements IController<Academic> {
 
         return a;
     }
-	
 }

@@ -1,24 +1,25 @@
 package br.unisinos.unitunes.controller;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import br.unisinos.unitunes.model.Midia;
 
 public class MidiaController implements IController<Midia> {
 
-	public void insert(Midia entity) {
+	public void insert(Midia entity) throws SQLException {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void update(Midia entitiy) {
+	public long update(Midia entity) throws SQLException {
 		// TODO Auto-generated method stub
-		
+		return 0;
 	}
 
-	public void delete(Midia entity) {
+	public int delete(long id) throws SQLException {
 		// TODO Auto-generated method stub
-		
+		return 0;
 	}
 
 	public List<Midia> getAll() {
@@ -26,9 +27,8 @@ public class MidiaController implements IController<Midia> {
 		return null;
 	}
 
-	public Midia getById(long id) {
+	public Midia getById(long id) throws SQLException {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }

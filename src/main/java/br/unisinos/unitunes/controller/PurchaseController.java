@@ -1,24 +1,25 @@
 package br.unisinos.unitunes.controller;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import br.unisinos.unitunes.model.Purchase;
 
 public class PurchaseController implements IController<Purchase> {
 
-	public void insert(Purchase entity) {
+	public void insert(Purchase entity) throws SQLException {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void update(Purchase entitiy) {
+	public long update(Purchase entity) throws SQLException {
 		// TODO Auto-generated method stub
-		
+		return 0;
 	}
 
-	public void delete(Purchase entity) {
+	public int delete(long id) throws SQLException {
 		// TODO Auto-generated method stub
-		
+		return 0;
 	}
 
 	public List<Purchase> getAll() {
@@ -26,9 +27,8 @@ public class PurchaseController implements IController<Purchase> {
 		return null;
 	}
 
-	public Purchase getById(long id) {
+	public Purchase getById(long id) throws SQLException {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 }

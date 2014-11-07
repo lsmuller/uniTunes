@@ -5,11 +5,11 @@ import java.util.List;
 
 public interface IController<T> {
 
-	void insert(T entity);
+	void insert(T entity) throws SQLException;
 	
-	void update(T entitiy);
+	long update(T entity) throws SQLException;
 	
-	void delete(T entity);
+	int delete(long id) throws SQLException;
 	
 	List<T> getAll ();
 	
