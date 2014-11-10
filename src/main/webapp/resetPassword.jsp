@@ -17,30 +17,14 @@
   <section class="container">
     <div class="login">
       <h1>Bem vindo ao UniTunes</h1>
-      
-      
-      <c:forEach var="message" items="${messages}">
-			${message.message} <br />
-	  </c:forEach>
-      
-      ${academic.email}
-      
-      
       <form method="post" action="index.html">
-        <p><input type="text" name="login" value="" placeholder="Username or Email"></p>
-        <p><input type="password" name="password" value="" placeholder="Password"></p>
-        <p class="remember_me">
-          <label>
-            <input type="checkbox" name="remember_me" id="remember_me">
-            Remember me on this computer
-          </label>
-        </p>
-        <p class="submit"><input type="submit" name="commit" value="Login"></p>
+        <p><input type="text" name="login" value="" placeholder="Email"></p>
+        <p class="submit"><input type="submit" name="commit" value="Send"></p>
       </form>
     </div>
 
     <div class="login-help">
-      <p>Forgot your password? <a href="resetPassword.jsp">Click here to reset it</a>.</p>
+      <p>Forgot your password? <a href="index.html">Click here to reset it</a>.</p>
     </div>
   </section>
 </body>
