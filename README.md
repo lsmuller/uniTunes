@@ -2,6 +2,9 @@
 
 Arquitetura de Software 2014/2
 
+## Add Proxy to use with SAP Cable
+git config --global http.proxy proxy:8080
+git config –-global –unset http.proxy
     
 ## Add a Servlet
 
