@@ -68,3 +68,14 @@ Deploy your code:
 
     :::term
     $ git push heroku master
+
+
+Commit no software do Github e para mandar para o servidor:
+
+    :::term 
+    Cd até a pasta do projeto (clonada pelo github):
+    $ git init
+    $ heroku login
+    colocar e-mail e senha
+    $ heroku git:remote -a whispering-everglades-2818
+    $ git push heroku master
