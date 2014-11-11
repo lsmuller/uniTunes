@@ -18,6 +18,8 @@
     <div class="login">
       <h1>Bem vindo ao UniTunes</h1>
       
+      <a href="<c:url value="/my_media" />">Minhas mídias</a>
+      
       
       <c:forEach var="message" items="${messages}">
 			${message.message} <br />

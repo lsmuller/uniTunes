@@ -1,9 +1,9 @@
-package br.unisinos.unitunes.controller;
+package br.unisinos.unitunes.service;
 
 import java.sql.SQLException;
 import java.util.List;
 
-public interface IController<T> {
+public interface IService<T> {
 
 	void insert(T entity) throws SQLException;
 	

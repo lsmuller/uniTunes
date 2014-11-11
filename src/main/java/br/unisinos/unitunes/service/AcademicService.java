@@ -1,4 +1,4 @@
-package br.unisinos.unitunes.controller;
+package br.unisinos.unitunes.service;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,21 +11,21 @@ import java.util.List;
 import br.unisinos.unitunes.DB.DBManager;
 import br.unisinos.unitunes.model.Academic;
 
-public class AcademicController implements IController<Academic> {
+public class AcademicService implements IService<Academic> {
 	
 	DBManager db;
 	Connection conn;
-	private static AcademicController ac;
+	private static AcademicService ac;
 	
 	
-	public static AcademicController getInstance() {
+	public static AcademicService getInstance() {
 		if (ac == null)
-			ac = new AcademicController();
+			ac = new AcademicService();
 		
 		return ac;
 	}
 	
-	public AcademicController() {
+	public AcademicService() {
 		try {
 			db = DBManager.getInstance();
 			conn = db.getConn();
@@ -78,7 +78,7 @@ public class AcademicController implements IController<Academic> {
 		
 		PreparedStatement ps = conn.prepareStatement("UPDATE ACADEMIC"
 				+ " SET excluded = true"
-				+ " WEHRE ID = ?");
+				+ " WHERE ID = ?");
 		ps.setLong(1, l);
 		
 		resultDelete = ps.executeUpdate();
@@ -94,9 +94,25 @@ public class AcademicController implements IController<Academic> {
 	        return resultDelete;
 	}
 	
-	public Academic login(String login, String password) {
+	public Academic login(String email, String password) throws SQLException{
+		ResultSet rs ;
 		Academic a = null;
 		
+		PreparedStatement ps = conn.prepareStatement("SELECT * FROM ACADEMIC WHERE EMAIL = ? "
+				+ "AND PASSWORD = ?");
+		
+		ps.setString(1, email);
+		ps.setString(2, password);
+
+		rs = ps.executeQuery();
+		
+		if(rs.next()) {
+			a = getFromResultSet(rs);
+		}
+		else {
+			throw new SQLException("Academic not found!");
+		}
+
 		return a;
 	}
 

@@ -1,11 +1,11 @@
-package br.unisinos.unitunes.controller;
+package br.unisinos.unitunes.service;
 
 import java.sql.SQLException;
 import java.util.List;
 
 import br.unisinos.unitunes.model.Purchase;
 
-public class PurchaseController implements IController<Purchase> {
+public class PurchaseService implements IService<Purchase> {
 
 	public void insert(Purchase entity) throws SQLException {
 		// TODO Auto-generated method stub

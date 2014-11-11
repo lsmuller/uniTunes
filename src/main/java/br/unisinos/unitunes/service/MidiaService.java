@@ -1,11 +1,11 @@
-package br.unisinos.unitunes.controller;
+package br.unisinos.unitunes.service;
 
 import java.sql.SQLException;
 import java.util.List;
 
 import br.unisinos.unitunes.model.Midia;
 
-public class MidiaController implements IController<Midia> {
+public class MidiaService implements IService<Midia> {
 
 	public void insert(Midia entity) throws SQLException {
 		// TODO Auto-generated method stub

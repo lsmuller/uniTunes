@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.unisinos.unitunes.controller.AcademicController;
 import br.unisinos.unitunes.model.Academic;
+import br.unisinos.unitunes.service.AcademicService;
 
 @WebServlet(
         name = "MyServlet", 
@@ -36,7 +36,7 @@ public class HelloServlet extends HttpServlet {
     	
     	Academic books;
     	
-    	AcademicController ac = AcademicController.getInstance();
+    	AcademicService ac = AcademicService.getInstance();
     	try {
     		books = ac.getById(1);
     	}
