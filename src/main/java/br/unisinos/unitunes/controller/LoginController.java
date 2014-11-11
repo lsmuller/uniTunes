@@ -1,6 +1,7 @@
 package br.unisinos.unitunes.controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.unisinos.unitunes.model.Academic;
 import br.unisinos.unitunes.model.ViewMessage;
-import br.unisinos.unitunes.service.LoginService;
+import br.unisinos.unitunes.service.AcademicService;
 
 @WebServlet(
         name = "LoginController", 
@@ -27,13 +28,19 @@ public class LoginController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     	
-    	LoginService loginService = new LoginService();
+    	AcademicService academicService = AcademicService.getInstance();
     	RequestDispatcher dispatcher = null;
     	
     	String email = request.getParameter("email");
     	String password = request.getParameter("password");
     	
-    	Academic academic = loginService.login(email, password);
+    	Academic academic = null;
+		try {
+			academic = academicService.login(email, password);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     	
     	if (academic != null) {
     		request.getSession().setAttribute("academic", academic);

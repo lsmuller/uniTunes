@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface IService<T> {
 
-	void insert(T entity) throws SQLException;
+	long insert(T entity) throws SQLException;
 	
 	long update(T entity) throws SQLException;
 	

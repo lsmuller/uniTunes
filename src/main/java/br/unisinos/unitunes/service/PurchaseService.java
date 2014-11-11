@@ -7,9 +7,9 @@ import br.unisinos.unitunes.model.Purchase;
 
 public class PurchaseService implements IService<Purchase> {
 
-	public void insert(Purchase entity) throws SQLException {
+	public long insert(Purchase entity) throws SQLException {
 		// TODO Auto-generated method stub
-		
+		return 0;
 	}
 
 	public long update(Purchase entity) throws SQLException {

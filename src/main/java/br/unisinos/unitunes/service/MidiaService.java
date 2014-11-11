@@ -7,9 +7,9 @@ import br.unisinos.unitunes.model.Midia;
 
 public class MidiaService implements IService<Midia> {
 
-	public void insert(Midia entity) throws SQLException {
+	public long insert(Midia entity) throws SQLException {
 		// TODO Auto-generated method stub
-		
+		return 0;
 	}
 
 	public long update(Midia entity) throws SQLException {

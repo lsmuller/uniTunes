@@ -1,3 +1,4 @@
+<%@page import="br.unisinos.unitunes.service.AcademicService"%>
 <%@ page import="java.util.*" %>
 <%@ page import="br.unisinos.unitunes.model.*" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -8,10 +9,14 @@
 
 
 		<%
-			Academic a = null;
+			AcademicService ac = AcademicService.getInstance();
+			Academic a = new Academic(10, "email@teste.com" + Math.random(), "Teddy", "Test", "senha", 0.00, false, false);
+			ac.insert(a);		
+		
+			/* Academic a = null;
 			a = (Academic) request.getAttribute("books");
 			
-			out.println(a);
+			out.println(a); */
 		
 			//List<Academic> academics = null;
 			//academics = (List<Academic>) request.getAttribute("books");

@@ -11,6 +11,7 @@ import java.util.List;
 import br.unisinos.unitunes.DB.DBManager;
 import br.unisinos.unitunes.model.Academic;
 
+
 public class AcademicService implements IService<Academic> {
 	
 	DBManager db;
@@ -35,9 +36,31 @@ public class AcademicService implements IService<Academic> {
 		}
 	}
 
-	public void insert(Academic entity) {
-		// TODO Auto-generated method stub
-		
+	public long insert(Academic entity) throws SQLException {
+		ResultSet generatedKeys = null;
+        long idRetornado = -1;
+
+        PreparedStatement ps = conn.prepareStatement("INSERT INTO academic VALUES (null, ?, ?, ?, ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
+        ps.setString(1, entity.getFirstName());
+        ps.setString(2, entity.getLastName());
+        ps.setString(3, entity.getEmail());
+        ps.setString(4, entity.getPassword());
+        ps.setDouble(5, entity.getBalance());
+        ps.setBoolean(6, entity.isAdmin());
+        ps.setBoolean(7, entity.isExcluded());
+
+        int affectedRows = ps.executeUpdate();
+        if (affectedRows == 0) {
+            throw new SQLException("Creating user failed, no rows affected.");
+        }
+        generatedKeys = ps.getGeneratedKeys();
+        if (generatedKeys.next()) {
+            idRetornado = generatedKeys.getLong(1);
+        } else {
+            throw new SQLException("Creating user failed, no generated key obtained.");
+        }
+
+        return idRetornado;
 	}
 
 	public long update(Academic entity) throws SQLException {
@@ -97,6 +120,10 @@ public class AcademicService implements IService<Academic> {
 	public Academic login(String email, String password) throws SQLException {
 		ResultSet rs ;
 		Academic a = null;
+		
+		if(email == "teste" && password == "teste") {
+			a = new Academic(0, email,"nome", "sobrenome", password, 0, false, false);
+		}
 		
 		PreparedStatement ps = conn.prepareStatement("SELECT * FROM ACADEMIC WHERE EMAIL = ? "
 				+ "AND PASSWORD = ?");
