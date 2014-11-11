@@ -9,7 +9,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>...:: UniTunes - Software de Gerenciamento de Mídias ::...</title>
+  <title>Login Form</title>
   <link rel="stylesheet" href="css/style.css">
   <!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
@@ -17,8 +17,6 @@
   <section class="container">
     <div class="login">
       <h1>Bem vindo ao UniTunes</h1>
-      
-      <a href="<c:url value="/my_media" />">Minhas mídias</a>
       
       
       <c:forEach var="message" items="${messages}">
