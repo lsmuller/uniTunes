@@ -94,7 +94,7 @@ public class AcademicService implements IService<Academic> {
 	        return resultDelete;
 	}
 	
-	public Academic login(String email, String password) throws SQLException{
+	public Academic login(String email, String password) throws SQLException {
 		ResultSet rs ;
 		Academic a = null;
 		
@@ -169,7 +169,6 @@ public class AcademicService implements IService<Academic> {
         	boolean excluded = rs.getBoolean(8);
         	
             a = new Academic(id, email, firstName, lastName, password, balance, admin, excluded);
-//            System.out.println("usuarioGetFromResultSet retornando " + u.toString());
         } catch (SQLException e) {
 //            TODO: fix
         }
