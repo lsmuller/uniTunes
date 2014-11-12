@@ -40,7 +40,9 @@ public class AcademicService implements IService<Academic> {
 		ResultSet generatedKeys = null;
         long idRetornado = -1;
 
-        PreparedStatement ps = conn.prepareStatement("INSERT INTO academic VALUES (?, ?, ?, ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
+        PreparedStatement ps = conn.prepareStatement("INSERT INTO academic "
+        		+ "(firstname, lastname, email, password, balance, admin, excluded) VALUES (?, ?, ?, ?, ?, ?, ?)", 
+        		Statement.RETURN_GENERATED_KEYS);
         ps.setString(1, entity.getFirstName());
         ps.setString(2, entity.getLastName());
         ps.setString(3, entity.getEmail());
