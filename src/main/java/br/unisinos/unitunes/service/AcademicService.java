@@ -70,12 +70,12 @@ public class AcademicService implements IService<Academic> {
 		long affectedRows;
 		
 		PreparedStatement ps = conn.prepareStatement("UPDATE ACADEMIC "
-				+ " SET firstname = ? " 
-				+ " lastname = ? "
-				+ " email = ? "
-				+ " password = ? "
-				+ " balance = ? "
-				+ " admin = ? "
+				+ " SET firstname = ?, " 
+				+ " lastname = ?, "
+				+ " email = ?, "
+				+ " password = ?, "
+				+ " balance = ?, "
+				+ " admin = ?, "
 				+ " excluded = ?"
 				+ " WHERE id = ?", Statement.RETURN_GENERATED_KEYS);
 		
