@@ -86,7 +86,8 @@ public class AcademicService implements IService<Academic> {
 //		ps.setDouble(5, entity.getBalance());
 //		ps.setBoolean(6, entity.isAdmin());
 //		ps.setBoolean(7, entity.isExcluded());
-		ps.setLong(8, entity.getId());			// WHERE CLAUSE
+//		ps.setLong(8, entity.getId());			// WHERE CLAUSE
+		ps.setLong(2, entity.getId());			// WHERE CLAUSE
 		
 
         affectedRows = ps.executeUpdate();
