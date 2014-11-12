@@ -9,12 +9,27 @@ public class Midia {
 	private String description;
 	private double price;
 	private long author;
-	private int category; // 1- Music, 2- Book, 3- Video, 4- Podcast
+	private long category; // 1- Music, 2- Book, 3- Video, 4- Podcast
 //	private Image image;
 	private int duration;
-	private int pagesCount;
+	private int pages;
 	private Date creation;
 	private boolean excluded;
+
+	public Midia(long id, String name, String description, double price,
+			long author, long category, int duration, int pages,
+			Date creation, boolean excluded) {
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.price = price;
+		this.author = author;
+		this.category = category;
+		this.duration = duration;
+		this.pages = pages;
+		this.creation = creation;
+		this.excluded = excluded;
+	}
 
 	public long getId() {
 		return id;
@@ -64,7 +79,7 @@ public class Midia {
 		this.author = author;
 	}
 
-	public int getCategory() {
+	public long getCategory() {
 		return category;
 	}
 
@@ -88,12 +103,12 @@ public class Midia {
 		this.duration = duration;
 	}
 
-	public int getPagesCount() {
-		return pagesCount;
+	public int getPages() {
+		return pages;
 	}
 
-	public void setPagesCount(int pagesCount) {
-		this.pagesCount = pagesCount;
+	public void setPages(int pages) {
+		this.pages = pages;
 	}
 	
 	@Override

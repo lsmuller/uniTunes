@@ -41,7 +41,8 @@ public class AcademicService implements IService<Academic> {
         long idRetornado = -1;
 
         PreparedStatement ps = conn.prepareStatement("INSERT INTO academic "
-        		+ "(firstname, lastname, email, password, balance, admin, excluded) VALUES (?, ?, ?, ?, ?, ?, ?)", 
+        		+ "(firstname, lastname, email, password, balance, admin, excluded) "
+        		+ "VALUES (?, ?, ?, ?, ?, ?, ?)", 
         		Statement.RETURN_GENERATED_KEYS);
         ps.setString(1, entity.getFirstName());
         ps.setString(2, entity.getLastName());
@@ -114,7 +115,7 @@ public class AcademicService implements IService<Academic> {
 	        } else if (resultDelete > 1) {
 	            throw new SQLException("More than one row deleted!");
 	        } else {
-	            System.out.println("Usuario código " + l + " deletado!");
+	            System.out.println("Academico código " + l + " deletado!");
 	        }
 
 	        return resultDelete;
