@@ -12,8 +12,9 @@
 			AcademicService ac = AcademicService.getInstance();
 			Academic a = ac.getById(1);
 			
-			a.setFirstName("Paulo Henrique");
-			ac.update(a);
+			//a.setFirstName("Paulo Henrique");
+			//ac.update(a);
+			ac.delete(a.getId());
 		
 		
 		/* Academic a = new Academic(10, "email@teste.com" + Math.random(), "Teddy", "Test", "senha", 0.00, false, false);
