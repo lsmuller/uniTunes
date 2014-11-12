@@ -70,7 +70,7 @@ public class AcademicService implements IService<Academic> {
 		long affectedRows;
 		
 		PreparedStatement ps = conn.prepareStatement("UPDATE ACADEMIC "
-				+ " SET firstname = ? " 
+				+ " SET firstname = ?, " 
 				+ " SET lastname = ?, "
 				+ " SET email = ?, "
 //				+ " SET password = ?, "
