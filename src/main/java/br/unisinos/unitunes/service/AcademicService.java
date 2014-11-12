@@ -71,8 +71,8 @@ public class AcademicService implements IService<Academic> {
 		
 		PreparedStatement ps = conn.prepareStatement("UPDATE ACADEMIC "
 				+ " SET firstname = ? " 
-//				+ " SET lastname = ?, "
-//				+ " SET email = ?, "
+				+ " SET lastname = ?, "
+				+ " SET email = ?, "
 //				+ " SET password = ?, "
 //				+ " SET balance = ?, "
 //				+ " SET admin = ?, "
@@ -80,14 +80,14 @@ public class AcademicService implements IService<Academic> {
 				+ " WHERE id = ?", Statement.RETURN_GENERATED_KEYS);
 		
 		ps.setString(1, entity.getFirstName());
-//		ps.setString(2, entity.getLastName());
-//		ps.setString(3, entity.getEmail());
+		ps.setString(2, entity.getLastName());
+		ps.setString(3, entity.getEmail());
 //		ps.setString(4, entity.getPassword());
 //		ps.setDouble(5, entity.getBalance());
 //		ps.setBoolean(6, entity.isAdmin());
 //		ps.setBoolean(7, entity.isExcluded());
 //		ps.setLong(8, entity.getId());			// WHERE CLAUSE
-		ps.setLong(2, entity.getId());			// WHERE CLAUSE
+		ps.setLong(4, entity.getId());			// WHERE CLAUSE
 		
 
         affectedRows = ps.executeUpdate();
