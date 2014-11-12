@@ -10,8 +10,15 @@
 
 		<%
 			AcademicService ac = AcademicService.getInstance();
-			Academic a = new Academic(10, "email@teste.com" + Math.random(), "Teddy", "Test", "senha", 0.00, false, false);
-			ac.insert(a);		
+			Academic a = ac.getById(1);
+			
+			a.setFirstName("Paulo Henrique");
+			ac.update(a);
+		
+		
+		/* Academic a = new Academic(10, "email@teste.com" + Math.random(), "Teddy", "Test", "senha", 0.00, false, false);
+			ac.insert(a);		 */
+			
 		
 			/* Academic a = null;
 			a = (Academic) request.getAttribute("books");

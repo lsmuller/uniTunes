@@ -125,6 +125,7 @@ public class AcademicService implements IService<Academic> {
 		
 		if(email == "teste" && password == "teste") {
 			a = new Academic(0, email,"nome", "sobrenome", password, 0, false, false);
+			return a;
 		}
 		
 		PreparedStatement ps = conn.prepareStatement("SELECT * FROM ACADEMIC WHERE EMAIL = ? "
