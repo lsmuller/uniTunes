@@ -4,7 +4,7 @@
 
 <script>
 	function sendConfirmationEmail(dsEmail){
-		location.href="/sendNewPassword.jsp?email=+"dsEmail;
+		location.href="/sendNewPassword.jsp?email="+dsEmail;
 	}
 </script>
 
