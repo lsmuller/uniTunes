@@ -6,13 +6,22 @@
 <html>
 	<body>
 
-	Listando academicos... <br>
+	Testando envio de email
+	<br>
 
 
 		<%
 		
+		AcademicService as = AcademicService.getInstance();
+		Academic a = as.getByEmail("plgrabin@gmail.com");
+		
 		// Envio de email
-		EmailService.sendMail();
+		try {
+			EmailService.sendPasswordRecoveryMail(a);
+		}
+		catch(Exception e) {
+			out.println("Deu alguma merda...");
+		}
 		
 			//AcademicService ac = AcademicService.getInstance();
 			//Academic a = ac.getById(1);
