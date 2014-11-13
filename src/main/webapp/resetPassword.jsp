@@ -4,8 +4,7 @@
 
 <script>
 	function sendConfirmationEmail(dsEmail){
-		alert(dsEmail);
-		location.href="/sendNewPassword.jsp";
+		location.href="/sendNewPassword.jsp?email=+"dsEmail;
 	}
 </script>
 
@@ -22,7 +21,7 @@
     <div class="login">
       <h1>Recuperar Senha</h1>
         <p><input type="text" name="login" value="" placeholder="Email"></p>
-        <p class="submit"><input type="button" name="commit" value="Enviar" onclick="sendConfirmationEmail(top.login.value);"></p>
+        <p class="submit"><input type="button" name="commit" value="Enviar" onclick="sendConfirmationEmail(document.all.login.value);"></p>
     </div>
   </section>
 </body>
