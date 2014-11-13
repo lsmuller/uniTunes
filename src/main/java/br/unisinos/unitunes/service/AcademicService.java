@@ -187,6 +187,25 @@ public class AcademicService implements IService<Academic> {
 		return a;
 	}
 
+	public Academic getByEmail(String email) throws SQLException {
+		ResultSet rs ;
+		Academic a = null;
+		
+		PreparedStatement ps = conn.prepareStatement("SELECT * FROM ACADEMIC WHERE EMAIL LIKE ?");
+		ps.setString(1, email);
+
+		rs = ps.executeQuery();
+		
+		if(rs.next()) {
+			a = getFromResultSet(rs);
+		}
+		else {
+			throw new SQLException("Academic not found!");
+		}
+
+		return a;
+	}
+	
     public Academic getFromResultSet(ResultSet rs) {
 		Academic a = null;
 
