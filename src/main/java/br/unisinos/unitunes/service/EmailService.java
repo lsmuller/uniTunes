@@ -10,6 +10,9 @@ import com.sendgrid.SendGridException;
 
 public class EmailService {
 	
+	private static String htmlText = "Sua senha é: <password> <br><br> "
+			+ " <a href=\"https://whispering-everglades-2818.herokuapp.com\">Clique para voltar ao uniTunes</a>";
+	
 	public static void sendPasswordRecoveryMail(Academic a) throws SQLException {
 		sendPasswordRecoveryMail(a.getEmail());
 	}
@@ -22,18 +25,15 @@ public class EmailService {
 		Email email = new Email();
 		
 		email.addTo(address);
-		email.addCc("paulograbin@gmail.com");
-		email.addCc("henriquebraum@gmail.com");
-		email.addCc("matheus.bloebaum@gmail.com");
-		email.addCc("lety182@gmail.com");
+		email.addCc("plgrabin@gmail.com");
 		email.setFrom("plgrabin@gmail.com");
-		email.setSubject("Teste envio de email do Heroku");
+		email.setSubject("uniTunes - Recuperação de senha");
 
 		AcademicService as = AcademicService.getInstance();
 		Academic a = as.getByEmail(address);
 		
-		
-		email.setText("Sua senha é: " + a.getPassword());
+		String mailText = htmlText.replace("<password>", a.getPassword());
+		email.setHtml(mailText);
 		
 		try {
 			SendGrid.Response response = sendGrid.send(email);
