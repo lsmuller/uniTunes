@@ -10,7 +10,8 @@ import com.sendgrid.SendGridException;
 
 public class EmailService {
 	
-	private static String htmlText = "Sua senha é: <password> <br><br> "
+	private static String htmlText = "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">" 
+			+ "Sua senha é: <password> <br><br> "
 			+ " <a href=\"https://whispering-everglades-2818.herokuapp.com\">Clique para voltar ao uniTunes</a>";
 	
 	public static void sendPasswordRecoveryMail(Academic a) throws SQLException {
